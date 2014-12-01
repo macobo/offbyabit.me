@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{doc.locale}}">
+<meta charset="utf-8">
+<title>{{_(doc.title)}} – {{_(podspec.title)}}</title>
+<link rel="stylesheet" href="{{g.static('/static/css/main.min.css')}}">
+<!-- <link rel="shortcut icon" href="{{g.static('/static/images/icon.png')}}"> -->
+<meta name="description" value="{{_(podspec.description)}}">
+<body>
+  <main>
+    <nav>
+      <a href="/">
+        <img src="{{g.static('/static/images/logo.jpg')}}" alt="Home" id="logo">
+      </a>
+      {% if doc.tagline %}
+      <span class="tagline">{{doc.tagline}}</span>
+      {% endif %}
+    </nav>
+    <section>
+      {% block main %}
+        {{doc.html|safe}}
+      {% endblock %}
+    </section>
+  </main>
+
+  <footer>
+    A technical blog by Karl-Aksel Puulmann.
+    [
+    <a href="/">Archive</a> |
+    <a href="/resume">Resume</a> |
+    <a href="/projects">Projects</a>
+    ]
+  </footer>
